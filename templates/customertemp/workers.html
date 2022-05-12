@@ -1,0 +1,41 @@
+{% extends 'customertemp/customer_home.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">workers</h4>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>User</th>
+                          <th>NAME</th>
+                          <th>CONTACT NO.</th>
+                          <th>Email</th>
+                          <th>ADDRESS</th>
+                          <th>WORK_TYPE</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for i in data %}
+                        <tr>
+                          <td class="py-1">
+                            {% if i.id_card %}
+                            <img src="{{i.id_card.url}}" alt="image"/>
+                            {% endif %}
+                          </td>
+                          <td>{{ i.name }}</td>
+                          <td>{{ i.contact_no }}</td>
+                          <td>{{ i.email }}</td>
+                          <td>{{ i.address }}</td>
+                          <td>{{ i.work_type }}</td>
+                        </tr>
+                      {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+{% endblock %}

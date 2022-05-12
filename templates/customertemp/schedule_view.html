@@ -1,0 +1,41 @@
+{% extends 'customertemp/customer_home.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">workers Schedules</h4>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>SL NO.</th>
+                          <th>EMPLOYEE NAME</th>
+                          <th>DATE</th>
+                          <th>STARTING TIME</th>
+                          <th>ENDING TIME</th>
+                          <th>Appointment</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for s in schedule %}
+                        <tr>
+                          <td>{{forloop.counter}}</td>
+                          <td>{{ s.employee }}</td>
+                          <td>{{ s.date }}</td>
+                          <td>{{ s.start_time }}</td>
+                          <td>{{ s.end_time }}</td>
+                          <td>
+                            <a href="{% url 'take_appointment' s.id %}">
+                            <button type="button" class="btn btn-primary">Book Appointment</button>
+                        </a>
+                          </td>
+                        </tr>
+                      {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+{% endblock %}

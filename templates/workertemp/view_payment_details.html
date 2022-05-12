@@ -1,0 +1,41 @@
+{% extends 'workertemp/worker_home.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Payment Details</h4>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                            <th>SINo</th>
+                            <th>Name</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for bill in bills %}
+                        <tr>
+                            <td class="py-1">{{ forloop.counter }}</td>
+                            <td>{{bill.name.name}}</td>
+                            <td>{{bill.amount}}</td>
+                            <td>
+                                {% if bill.status == 0  %}
+                                <button type="button" class="btn btn-primary">Bill Pending</button>
+                                {% elif bill.status == 1  %}
+                                <button type="button" class="btn btn-success">Paid</button>
+                                {% elif bill.status == 2  %}
+                                <button type="button" class="btn btn-danger">Choosed to Pay in Direct</button>
+                                {% endif %}
+                            </td>
+                        </tr>
+                      {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'admintemp/admin_home.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Appointment Status</h4>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>SL NO.</th>
+                          <th>EMPLOYEE NAME</th>
+                          <th>DATE</th>
+                          <th>STARTING TIME</th>
+                          <th>ENDING TIME</th>
+                          <th>Appointment</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for a in appointment %}
+                        <tr>
+                          <td>{{forloop.counter}}</td>
+                          <td>{{ a.schedule.employee }}</td>
+                          <td>{{ a.schedule.date }}</td>
+                          <td>{{ a.schedule.start_time }}</td>
+                          <td>{{ a.schedule.end_time }}</td>
+                          <td>
+                              {% if a.status == 0 %}
+                        <a type="button" class="btn btn-success" href="{% url 'approve_appointment' a.id %}">Approve</a>
+                        <form action="{% url 'reject_appointment' a.id %}" method="post" style="display: inline;"
+                              onsubmit="window.mytest()">
+                            {% csrf_token %}
+                            <input type="hidden" value="{{ a.id }}"/>
+                            <button class="btn btn-danger">Reject</Button>
+                        </form>
+                        {% elif a.status == 1 %}
+
+                        <button type="button" class="btn btn-success">Appointment Confirmed</button>
+
+                        {% else %}
+                        <button type="button" class="btn btn-danger">Rejected</button>
+                        {% endif %}
+                          </td>
+                        </tr>
+                      {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'customertemp/customer_home.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Pay Bill</h4>
+                  <form method="post" enctype="multipart/form-data">{% csrf_token %}
+
+                        <div class="form-group">
+                            <label for="card" class="col-form-label">Card Number</label>
+                            <input class="form-control" type="number" minlength="13" maxlength="16" name="card" id="card" required >
+                        </div>
+                        <div class="form-group relative">
+                            <label for="cvv" class="col-form-label">CVV</label>
+                            <input class="form-control" name="cvv" type="password" minlength="3" maxlength="3" id="cvv" required>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="example-month-input" class="col-form-label">Month</label>
+                            <input class="form-control" name="exp" type="month" id="example-month-input" required>
+                        </div>
+                        <a href="javascript:alert('PAYEMENT SUCCESSFULL!');" class="btn btn-primary">SUBMIT</a>
+                    </form>
+                </div>
+              </div>
+            </div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'admintemp/admin_home.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Feedback Reply</h4>
+                  <form class="forms-sample" method="post">
+                      {% csrf_token %}
+                      <label class="form-label">Subject</label>
+                      <input required class="form-control" readonly value="{{feedback.subject}}">
+                      <label class="form-label">Feedback</label>
+                      <input class="form-control" readonly value="{{feedback.feedback}}">
+                      <label class="form-label">Reply</label>
+                      <textarea cols="50" rows="5" name="reply"></textarea>
+                      <div class="d-grid gap-3 d-md-block">
+                          <button type="submit" class="btn btn-primary">submit</button>
+                      </div>
+                  </form>
+                </div>
+              </div>
+</div>
+{% endblock %}

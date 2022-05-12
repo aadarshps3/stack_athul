@@ -1,0 +1,54 @@
+{% extends 'customertemp/customer_home.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">View Bill</h4>
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="card-body">
+                    {% for bill in bills %}
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <label>Name</label>
+                            </div>
+                            <div class="col-lg-8">
+                                <label>{{bill.name.name}}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <label>Amount</label>
+                            </div>
+                            <div class="col-lg-8">
+                                <label>{{bill.amount}}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <label>Pay Bill</label>
+                            </div>
+                            <div class="col-lg-8">
+                                {% if bill.status == 0 %}
+                                <a href="{% url 'face' %}" class="btn btn-primary">PAY NOW</a>
+                                <a href="{% url 'pay_in_direct' bill.id %}" class="btn btn-primary">PAY DIRECT</a>
+                                {% else %}
+                                <button class="btn btn-success">Bill Paid </button>
+                                {% endif %}
+
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

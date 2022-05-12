@@ -1,0 +1,43 @@
+{% extends 'admintemp/admin_home.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Feedback View</h4>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                      <tr>
+                          <th>SI No</th>
+                          <th>Name</th>
+                          <th>Subject</th>
+                          <th>Feedback</th>
+                          <th>Date</th>
+                          <th>Reply</th>
+                      </tr>
+                      </thead>
+                        <tbody>
+                        {% for f in feedback %}
+                        <tr>
+                            <td>{{forloop.counter}}</td>
+                            <td>{{f.user}}</td>
+                            <td>{{f.subject}}</td>
+                            <td>{{f.feedback}}</td>
+                            <td>{{f.date}}</td>
+                            <td>
+                                {% if f.reply == None %}
+                                <a href="{% url 'reply_Feedback' f.id %}">Reply Now</a>
+                                {% else %}
+                                {{f.reply}}
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+</div>
+{% endblock %}
