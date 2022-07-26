@@ -81,7 +81,6 @@ class PayBillForm(forms.ModelForm):
 
 class FeedbackForm(forms.ModelForm):
     date = forms.DateField(widget=DateInput)
-
     class Meta:
         model = Feedback
         fields = ('subject', 'feedback', 'date')
