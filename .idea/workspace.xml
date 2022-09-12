@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3a7badd-760f-41f1-ad73-94c3c89eb040" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/online_home_service/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/online_home_service/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/online_home_service/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/online_home_service/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +34,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_opened_file_path": "C:/Users/ADARSH PS/Downloads/stackkkk/project",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie"
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
