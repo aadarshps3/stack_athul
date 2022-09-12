@@ -25,7 +25,7 @@
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="navbar-brand-wrapper d-flex justify-content-center">
         <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
-          <a class="navbar-brand brand-logo" href="index.html"><img src="{% static 'assets/images/logo.svg' %}" alt="logo"/></a>
+          <a class="navbar-brand brand-logo" href="#"><img src="{% static 'assets/images/stack1.png' %}" alt="logo"/></a>
           <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{% static 'assets/images/logo-mini.svg' %}" alt="logo"/></a>
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
             <span class="mdi mdi-sort-variant"></span>
@@ -146,7 +146,7 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="{% url 'farmerviewprofile' %}">
               <i class="mdi mdi-home menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
@@ -154,42 +154,48 @@
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <i class="mdi mdi-circle-outline menu-icon"></i>
-              <span class="menu-title">Employees</span>
+              <span class="menu-title">Nursery</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'view_workers' %}">View</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'view_Nursery1' %}">View</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'view_stock1' %}">View Products</a></li>
               </ul>
             </div>
+<!--             <div class="collapse" id="ui-basic">-->
+<!--              <ul class="nav flex-column sub-menu">-->
+<!--                <li class="nav-item"> <a class="nav-link" href="{% url 'view_stock1' %}">View Products</a></li>-->
+<!--              </ul>-->
+<!--            </div>-->
           </li>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-basics" aria-expanded="false" aria-controls="ui-basic">
               <i class="mdi mdi-circle-outline menu-icon"></i>
-              <span class="menu-title">Schedules</span>
+              <span class="menu-title">Leaf Disease</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basics">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'view_schedule' %}">View</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'load_upload_page' %}">Detect</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-basi" aria-expanded="false" aria-controls="ui-basi">
               <i class="mdi mdi-circle-outline menu-icon"></i>
-              <span class="menu-title">Appointment status</span>
+              <span class="menu-title">Soil Type</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basi">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'appointment_view' %}">View</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'load_upload_page1' %}">Detect</a></li>
               </ul>
             </div>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-bas" aria-expanded="false" aria-controls="ui-bas">
               <i class="mdi mdi-circle-outline menu-icon"></i>
-              <span class="menu-title">Feedback</span>
+              <span class="menu-title">Enquiry</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-bas">
@@ -202,13 +208,13 @@
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-ba" aria-expanded="false" aria-controls="ui-ba">
               <i class="mdi mdi-circle-outline menu-icon"></i>
-              <span class="menu-title">BILL DETAILS</span>
+              <span class="menu-title">Chat With Farmers</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-ba">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'view_bill_user' %}">Pay Bill</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'bill_history' %}">Bill History</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'chat_add' %}">Chat</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'chat_view' %}">View</a></li>
               </ul>
             </div>
           </li>
@@ -218,20 +224,20 @@
       <div class="main-panel">
         <div class="content-wrapper">
           
-          <div class="row">
-            <div class="col-md-12 grid-margin">
-              <div class="d-flex justify-content-between flex-wrap">
-                <div class="d-flex align-items-end flex-wrap">
-                  <div class="me-md-3 me-xl-5">
-                    <h2>Welcome back,</h2>
-                    <p class="mb-md-0">Your analytics dashboard template.</p>
-                  </div>
-                </div>
-                <div class="d-flex justify-content-between align-items-end flex-wrap">
-                </div>
-              </div>
-            </div>
-          </div>
+<!--          <div class="row">-->
+<!--            <div class="col-md-12 grid-margin">-->
+<!--              <div class="d-flex justify-content-between flex-wrap">-->
+<!--                <div class="d-flex align-items-end flex-wrap">-->
+<!--                  <div class="me-md-3 me-xl-5">-->
+<!--                    <h2>Welcome back,</h2>-->
+<!--                    <p class="mb-md-0">Your analytics dashboard template.</p>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--                <div class="d-flex justify-content-between align-items-end flex-wrap">-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
           <div class="row">
             {% block content %}
             {% endblock %}
@@ -243,18 +249,18 @@
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
-        <footer class="footer">
-        <div class="d-sm-flex justify-content-center justify-content-sm-between">
-          <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © <a href="https://www.bootstrapdash.com/" target="_blank">bootstrapdash.com </a>2021</span>
-          <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Only the best <a href="https://www.bootstrapdash.com/" target="_blank"> Bootstrap dashboard  </a> templates</span>
-        </div>
-        </footer>
-        <!-- partial -->
-      </div>
-      <!-- main-panel ends -->
-    </div>
-    <!-- page-body-wrapper ends -->
-  </div>
+<!--        <footer class="footer">-->
+<!--        <div class="d-sm-flex justify-content-center justify-content-sm-between">-->
+<!--&lt;!&ndash;          <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © <a href="https://www.bootstrapdash.com/" target="_blank">bootstrapdash.com </a>2021</span>&ndash;&gt;-->
+<!--&lt;!&ndash;          <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Only the best <a href="https://www.bootstrapdash.com/" target="_blank"> Bootstrap dashboard  </a> templates</span>&ndash;&gt;-->
+<!--        </div>-->
+<!--        </footer>-->
+<!--        &lt;!&ndash; partial &ndash;&gt;-->
+<!--      </div>-->
+<!--      &lt;!&ndash; main-panel ends &ndash;&gt;-->
+<!--    </div>-->
+<!--    &lt;!&ndash; page-body-wrapper ends &ndash;&gt;-->
+<!--  </div>-->
   <!-- container-scroller -->
 
   <!-- plugins:js -->

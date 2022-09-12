@@ -3,18 +3,18 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
 
-from homeservice_app.forms import Workform, LoginRegister, WorkerRegister, AddBill
-from homeservice_app.models import Worker, Login, Customers, Work, Appointment, Feedback, Bill
+from homeservice_app.forms import Workform, LoginRegister, NurseryRegister,weatherform
+from homeservice_app.models import Nursery, Login, Farmer, Work , Officer,weather
 
 
-@login_required(login_url='login_view')
+
 def admin_home(request):
     return render(request, 'admintemp/admin_home.html')
 
 
 @login_required(login_url='login_view')
-def view_workers(request):
-    data = Worker.objects.all()
+def view_Nursery(request):
+    data = Nursery.objects.all()
     return render(request, 'admintemp/workers.html', {'data': data})
 
 
@@ -49,19 +49,35 @@ def remove_worker(request, id):
 
 @login_required(login_url='login_view')
 def view_customers(request):
-    data = Customers.objects.all()
+    data = Farmer.objects.all()
     return render(request, 'admintemp/customers.html', {'data': data})
 
 
 @login_required(login_url='login_view')
 def remove_customers(request, id):
-    data1 = Customers.objects.get(id=id)
+    data1 = Farmer.objects.get(id=id)
     data = Login.objects.get(customer=data1)
     if request.method == 'POST':
         data.delete()
         return redirect('customers_view')
     else:
         return redirect('customers_view')
+
+
+@login_required(login_url='login_view')
+def view_officer(request):
+    data = Officer.objects.all()
+    return render(request, 'admintemp/officers.html', {'data': data})
+
+@login_required(login_url='login_view')
+def remove_officer(request, id):
+    data1 = Officer.objects.get(id=id)
+    data = Login.objects.get(officer=data1)
+    if request.method == 'POST':
+        data.delete()
+        return redirect('view_officer')
+    else:
+        return redirect('view_officer')
 
 
 @login_required(login_url='login_view')
@@ -130,7 +146,7 @@ def reject_appointment(request, id):
 
 
 @login_required(login_url='login_view')
-def Feedback_admin(request):
+def Feedback_officer(request):
     f = Feedback.objects.all()
     return render(request, 'admintemp/complaint_view.html', {'feedback': f})
 
@@ -161,3 +177,18 @@ def view_bill(request):
     bill = Bill.objects.all()
     print(bill)
     return render(request, 'admintemp/view_payment_details.html', {'bills': bill})
+
+
+
+def weatherdata(request):
+    form = weatherform()
+    if request.method == 'POST':
+        form = weatherform(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('view_weather')
+    return render(request,'admintemp/weather1.html' , {'form': form})
+
+def view_weather(request):
+    data = weather.objects.all()
+    return render(request,'admintemp/view_temp.html',{'data':data})

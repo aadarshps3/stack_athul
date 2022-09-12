@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% extends 'customertemp/customer_home.html' %}
+{% block content %}
+
+    {% for i in data %}
+
+
+<div class="card" style="width: 18rem;">
+    <h6>Seeds</h6>
+  <img src="{{i.photo.url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{i.name}}</h5>
+    <p class="card-text">PRICE : {{i.rate}}₹</p>
+    <p class="card-text">How to plant: {{i.how_to_plant}}</p>
+    <p class="card-text">Time to Yield: {{i.duration}} days</p>
+  </div>
+</div>
+{%endfor%}
+
+    {% for j in data1 %}
+
+
+<div class="card" style="width: 18rem;">
+    <h6>Plants</h6>
+  <img src="{{j.photo.url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{j.name}}</h5>
+    <p class="card-text">PRICE : {{j.rate}}₹</p>
+      <p class="card-text">How to plant: {{j.how_to_plant}}</p>
+    <p class="card-text">Time to Yield: {{j.duration}} days</p>
+  </div>
+</div>
+{%endfor%}
+
+    {% for k in data2 %}
+
+
+<div class="card" style="width: 18rem;">
+     <h6>Fertilizer</h6>
+<img src="{{k.photo.url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{k.name}}</h5>
+    <p class="card-text">PRICE : {{k.rate}}₹</p>
+    <p class="card-text">Category : {{k.category}}</p>
+    <p class="card-text">Company Name : {{k.company_name}}</p>
+    <p class="card-text">How can we use it : {{k.how_to_use}}</p>
+  </div>
+</div>
+{%endfor%}
+        {%endblock%}

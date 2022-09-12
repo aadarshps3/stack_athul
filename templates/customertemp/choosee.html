@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+{% extends 'customertemp/customer_home.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+{% load static %}
+<head>
+
+     <title>Health Template - News Page</title>
+<!--
+
+Template 2098 Health
+
+http://www.tooplate.com/view/2098-health
+
+-->
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="Tooplate">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+     <link rel="stylesheet" href="{% static 'static/css/bootstrap.min.css' %}">
+     <link rel="stylesheet" href="{% static 'static/css/magnific-popup.css' %}">
+
+     <link rel="stylesheet" href="{% static 'static/css/font-awesome.min.css' %}">
+     <link rel="stylesheet" href="{% static 'static/css/animate.css' %}">
+
+     <link rel="stylesheet" href="{% static 'static/css/owl.carousel.css' %}">
+     <link rel="stylesheet" href="{% static 'static/css/owl.theme.default.min.css' %}">
+
+
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="{% static 'static/css/tooplate-style.css' %}">
+
+
+
+
+<style>
+
+.button1 {
+  background-color: #696cff;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button2 {
+  background-color: #697a8d;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+</style>
+
+
+
+
+</head>
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+     <!-- PRE LOADER -->
+     <section class="preloader">
+          <div class="spinner">
+
+               <span class="spinner-rotate"></span>
+
+          </div>
+     </section>
+
+
+     <!-- HEADER -->
+     <!-- <header>
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-4 col-sm-3">
+                         <p>Welcome to a Professional Health Care</p>
+                    </div>
+
+                    <div class="col-md-8 col-sm-9 text-align-right">
+                         <span class="phone-icon"><i class="fa fa-phone"></i> 0496-2673315</span>
+                         <span class="date-icon"><i class="fa fa-calendar-plus-o"></i> 9:00 AM - 7:00 PM (Mon-Fri)</span>
+                         <span class="email-icon"><i class="fa fa-envelope-o"></i> <a href="#">info@covid.com</a></span>
+                    </div>
+
+               </div>
+          </div>
+     </header> -->
+
+
+     <!-- MENU -->
+<!--     <section class="navbar navbar-default navbar-static-top" role="navigation">-->
+<!--          <div class="container">-->
+
+<!--               <div class="navbar-header">-->
+<!--                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">-->
+<!--                         <span class="icon icon-bar"></span>-->
+<!--                         <span class="icon icon-bar"></span>-->
+<!--                         <span class="icon icon-bar"></span>-->
+<!--                    </button>-->
+
+<!--                    &lt;!&ndash; lOGO TEXT HERE &ndash;&gt;-->
+<!--                    <a href="#" class="navbar-brand"><i class="fa fa-h-square"></i>Leaf Disease Detection Using AI</a>-->
+<!--               </div>-->
+
+<!--               &lt;!&ndash; MENU LINKS &ndash;&gt;-->
+<!--               <div class="collapse navbar-collapse">-->
+<!--                    <ul class="nav navbar-nav navbar-right">-->
+<!--
+                    </ul>
+<!              </div>-->
+
+<!--          </div>-->
+<!--     </section>-->
+
+
+ <!-- NEWS DETAIL -->
+     <section id="task" data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
+                  <div class="news-image">
+                                   <img src="{% static 'static/images/w3.jpg' %}" class="img-responsive" alt="">
+                              </div>
+
+
+                         <div class="col-md-3 col-sm-2">
+                              {% if messages %}
+                            <ul class="alert alert-danger" role="alert">
+                                 {% for message in messages %}
+                                 {{ message }}
+                                 {% endfor %}
+                            </ul>
+                              {% endif %}
+   <!-- NEWS THUMB -->
+
+                             <div class="card" style="width:20rem;background-color:#d8e0ed">
+                             <div class="news-detail-thumb">
+
+                                 <h4  style="text-align:center;">Upload your image here... </h4>
+                                          <div>
+                                        <img src="{% static 'choose/images/ad.jpg' %}" style="width:320px"><br>
+
+                                         </div>
+<!--                                         <img src="{% static 'static/images/ee.jpg' %}" class="img-responsive">-->
+
+                                         </div>
+
+                                 <form method="POST" enctype="multipart/form-data">
+                                            {% csrf_token %}
+                                     <div class="mb-3">
+
+                                   <input class="btn btn-primary btn-sm btn-block" type="file" name="soil">
+                                     </div>
+
+
+                                            <center><button class="button1" type="submit" name="upload_btn" style="margin-top:30px;">Upload  Images </button></center>
+
+                                             <center><button class="button2" type="submit" name="check_btn">Check-DISEASE </button></center>
+                                   </form>
+                                             <!--<input type="button" class="button" value="Input Button"> -->
+
+                            </div>
+                         </div>
+
+                   <div class="col-md-3 col-sm-2" style="margin-left:35%;">
+                        <div class="card" style="margin-right:200px,width:30px">
+                                   <!-- NEWS THUMB -->
+                                        <div class="news-detail-thumb " >
+
+                                        <h3 class="p-2" style="text-align:center"> ... The Result ... </h3>
+                                          <div>
+                                        <img src="{{image.soil.url}}" height="200px" width="280 px" alt="Image need to be Uploaded" class="img-responsive p-2">
+                                              </div>
+                                              <p><h5 id="demo" class="p-2" style="text-align:justify">{{prediction}}</h5> </p>
+                                            <h2 id="demo2"></h2>
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+               </div>
+             </div>
+             </div>
+            </div>
+         </div>
+         </div>
+
+     </section>
+     <script>
+
+         let predict=document.getElementById("demo").innerHTML;
+         if(predict=="The soil is Black Soil"){
+         document.getElementById("demo2").innerHTML=`<a href="https://www.britannica.com/place/India/Black-soils" target="_blank">Read More...</a>`
+         }
+         else if(predict=="The soil is Lateraite soil"){
+          document.getElementById("demo2").innerHTML=`<a href="https://en.wikipedia.org/wiki/Laterite" target="_blank">Read More...</a>`
+          }
+           else if(predict=="It is a Yellow soil"){
+          document.getElementById("demo2").innerHTML=`<a href="https://encyclopedia2.thefreedictionary.com/Yellow+Soil#:~:text=a%20soil%20formed%20under%20broad,horizons%20is%2030%2D70%20cm." target="_blank">Read More...</a>`
+          }
+          else{
+            document.getElementById("demo2").innerHTML=`<span></span>`
+            }
+
+
+     </script>
+     <!-- FOOTER -->
+<!--     <footer data-stellar-background-ratio="5">-->
+<!--          <div class="news-social-share">-->
+
+<!--&lt;!&ndash;                                        <a href="#" class="btn btn-primary"><i class="fa fa-facebook"></i>Facebook</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <a href="#" class="btn btn-success"><i class="fa fa-twitter"></i>Twitter</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <a href="#" class="btn btn-danger"><i class="fa fa-google-plus"></i>Google+</a>&ndash;&gt;-->
+
+
+<!--                    &lt;!&ndash; <div class="col-md-12 col-sm-12 border-top">-->
+<!--                         <div class="col-md-6 col-sm-6">-->
+<!--                              <div class="copyright-text">-->
+<!--                                   <p>Copyright &copy; 2021 Covid -19 Detection using X rays-->
+
+<!--                                   | Design: COVID DETECTION</p>-->
+<!--                              </div>-->
+<!--                         </div>-->
+<!--                         <div class="col-md-4 col-sm-6">-->
+<!--                              <div class="footer-link">-->
+<!--                                   <a href="#">Check for COVID</a>-->
+<!--                                   <a href="#">Departments</a>-->
+
+
+<!--                              </div>-->
+<!--                         </div>-->
+
+<!--                    </div> &ndash;&gt;-->
+
+<!--               </div>-->
+<!--          </div>-->
+<!--     </footer>-->
+
+
+     <!-- SCRIPTS -->
+     <script src="{% static 'static/js/jquery.js' %}"></script>
+     <script src="{% static 'static/js/bootstrap.min.js' %}"></script>
+     <script src="{% static 'static/js/jquery.sticky.js' %}"></script>
+     <script src="{% static 'static/js/jquery.stellar.min.js' %}"></script>
+     <script src="{% static 'static/js/jquery.magnific-popup.min.js' %}"></script>
+     <script src="{% static 'static/js/magnific-popup-options.js' %}"></script>
+     <script src="{% static 'static/js/wow.min.js' %}"></script>
+     <script src="{% static 'static/js/smoothscroll.js' %}"></script>
+     <script src="{% static 'static/js/owl.carousel.min.js' %}"></script>
+     <script src="{% static 'static/js/custom.js' %}"></script>
+
+
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'customertemp/customer_home.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<form method="post">
+    <h5>Update User</h5>
+     {% csrf_token %}
+        {{form|crispy}}<br>
+
+<!--    <button type="submit" value=" ">submit</button>-->
+    <div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+</form>
+{% endblock %}

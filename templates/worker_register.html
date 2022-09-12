@@ -27,12 +27,12 @@
         <div class="row w-100 mx-0">
           <div class="col-lg-8 mx-auto">
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
-              <p><h3>Worker Register Form</h3></p>
+              <p><h3>Nursery Register Form</h3></p>
               <form class="pt-3" method="post" enctype="multipart/form-data">
                   {% csrf_token %}
                   <div class="form-group">
                       {{user_form|crispy}}
-                      {{worker_form|crispy}}
+                      {{Nursery_form|crispy}}
                   </div>
                 <div class="mb-4">
                   <div class="form-check">
@@ -46,7 +46,7 @@
                   <button type="submit" class="btn btn-info">Signup</button>
                 </div>
                 <div class="text-center mt-4 font-weight-light">
-                  Already have an account? <a href="{% url 'login' %}" class="text-primary">Login</a>
+                  Already have an account? <a href="{% url 'login_view' %}" class="text-primary">Login</a>
                 </div>
               </form>
             </div>

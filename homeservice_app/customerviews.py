@@ -5,19 +5,42 @@ import cv2
 import numpy as np
 import face_recognition
 import os
+from homeservice_app.prediction import model_predict
+from homeservice_app.prediction1 import model_predict1
 
-from homeservice_app.forms import FeedbackForm, PayBillForm
-from homeservice_app.models import Worker, Schedule, Customers, Appointment, Feedback, Bill, CreditCard
+from homeservice_app.forms import FeedbackForm, ChatForm , upload_form,upload_form1,FarmerRegister
+from homeservice_app.models import Nursery, Farmer, Feedback, Chat , upload_img,Addproduct ,upload_imgg,seed,plant,fertilizer
 
 
-@login_required(login_url='login_view')
 def customer_home(request):
     return render(request, 'customertemp/customer_home.html')
 
 
+
+def farmerviewprofile(request):
+    farmer = Farmer.objects.get(user=request.user)
+    return render(request, 'customertemp/profileview.html',{'farmer': farmer})
+
+
+def updatefarmer(request):
+    farmer = Farmer.objects.get(user=request.user)
+    form = FarmerRegister(instance=farmer)
+    if request.method == 'POST':
+        form = FarmerRegister(request.POST, instance=farmer)
+        if form.is_valid():
+            form.save()
+            messages.info(request, ' Profile Updated Successfully')
+            return redirect('farmerviewprofile')
+    return render(request, 'customertemp/update.html', {'form': form})
+
+
 @login_required(login_url='login_view')
 def view_workers_customer(request):
-    data = Worker.objects.all()
+    data = Nursery.objects.all()
+    return render(request, 'customertemp/workers.html', {'data': data})
+
+def view_Nursery1(request):
+    data = Nursery.objects.all()
     return render(request, 'customertemp/workers.html', {'data': data})
 
 
@@ -84,73 +107,6 @@ def view_bill_user(request):
     print(bill)
     return render(request, 'customertemp/view_bill_user.html', {'bills': bill})
 
-def facepay(request):
-    path = 'media/Training_images'
-    images = []
-    classNames = []
-    myList = os.listdir(path)
-    print(myList)
-    for cl in myList:
-        curImg = cv2.imread(f'{path}/{cl}')
-        images.append(curImg)
-        classNames.append(os.path.splitext(cl)[0])
-    print(classNames)
-    print(type(classNames))
-    encodeList = []
-
-    for img in images:
-        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-        encode = face_recognition.face_encodings(img)[0]
-        encodeList.append(encode)
-    return encodeList
-
-
-    encodeListKnown = facepay(images)
-    print('Encoding Complete')
-
-    cap = cv2.VideoCapture(0)
-
-    while True:
-        success, img = cap.read()
-        # img = captureScreen()
-        imgS = cv2.resize(img, (0, 0), None, 0.25, 0.25)
-        imgS = cv2.cvtColor(imgS, cv2.COLOR_BGR2RGB)
-
-        facesCurFrame = face_recognition.face_locations(imgS)
-        encodesCurFrame = face_recognition.face_encodings(imgS, facesCurFrame)
-
-        for encodeFace, faceLoc in zip(encodesCurFrame, facesCurFrame):
-            matches = face_recognition.compare_faces(encodeListKnown, encodeFace)
-            faceDis = face_recognition.face_distance(encodeListKnown, encodeFace)
-            print(faceDis)
-            matchIndex = np.argmin(faceDis)
-            print(matchIndex)
-
-            if matches[matchIndex]:
-                name = classNames[matchIndex].upper()
-                # print(name)
-                y1, x2, y2, x1 = faceLoc
-                y1, x2, y2, x1 = y1 * 4, x2 * 4, y2 * 4, x1 * 4
-                cv2.rectangle(img, (x1, y1), (x2, y2), (0, 255, 0), 2)
-                cv2.rectangle(img, (x1, y2 - 35), (x2, y2), (0, 255, 0), cv2.FILLED)
-                cv2.putText(img, name, (x1 + 6, y2 - 6), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 255, 255), 2)
-                # if (label == 0):
-                #     num = 'MY'
-                #     value = write_read(num)
-                #     break
-                # elif (label == 1):
-                #     num = 'NM'
-                #     value = write_read(num)
-                #     break
-
-        cv2.imshow('Webcam', img)
-        if cv2.waitKey(1) == ord("q"):
-            break
-
-
-
-
-
 
 def pay_bill(request, id):
     bi = Bill.objects.get(id=id)
@@ -193,3 +149,112 @@ def bill_history(request):
 
 # def successful(request):
 #     return render(request, 'successfull.html',)
+
+def chat_add(request):
+    form = ChatForm()
+    u = request.user
+    if request.method == 'POST':
+        form = ChatForm(request.POST)
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.user = u
+            obj.save()
+            messages.info(request, 'Complaint Registered Successfully')
+            return redirect('chat_add')
+    else:
+        form = ChatForm()
+    return render(request,'customertemp/chat_add.html',{'form':form})
+
+def chat_view(request):
+    print('hi')
+    chat = Chat.objects.all()
+    print(chat)
+    return render(request,'customertemp/chat_view.html',{'chat':chat})
+
+def task_load(request):
+
+    return render(request,'customertemp/TASK.html')
+
+
+def load_upload_page(request):
+    if request.method =="POST" and 'upload_btn' in request.POST:
+
+        form = upload_form(request.POST,request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.error(request, "Image Uploaded Sucessfully!")
+        else:
+            form = upload_form()
+            messages.error(request, "Image not Uploaded!")
+
+    if request.method =="POST" and 'check_btn' in request.POST:
+
+       obj=upload_img.objects.all().last()
+       scr=obj.img_upload
+       new_scr='media/'+str(scr)
+       print("___________the scourse _----------- ")
+       print(new_scr)
+       get_prediction=model_predict(new_scr)
+       print("____________ the prediction ______________")
+       print(get_prediction)
+       context={
+           "image":obj,
+           "prediction":get_prediction
+                }
+       return render(request, 'customertemp/choose.html',context)
+
+    if request.method == "POST" and 'log_out_btn' in request.POST:
+
+        return redirect('log_out_load')
+
+
+    return render(request,'customertemp/choose.html')
+
+
+
+def task_load1(request):
+
+    return render(request,'customertemp/TASKK.html')
+
+
+def load_upload_page1(request):
+    if request.method =="POST" and 'upload_btn' in request.POST:
+
+        form = upload_form1(request.POST,request.FILES)
+        print(form)
+        if form.is_valid():
+            form.save()
+            messages.error(request, "Image Uploaded Sucessfully!")
+        else:
+            form = upload_form1()
+            messages.error(request, "Image not Uploaded!")
+
+    if request.method =="POST" and 'check_btn' in request.POST:
+
+       obj=upload_imgg.objects.all().last()
+       scr1=obj.soil
+       new_scr='media/'+str(scr1)
+       print("___________the scourse _----------- ")
+       print(new_scr)
+       get_prediction=model_predict1(new_scr)
+       print("____________ the prediction ______________")
+       print(get_prediction)
+       context={
+           "image":obj,
+           "prediction":get_prediction
+                }
+       return render(request, 'customertemp/choosee.html',context)
+
+    if request.method == "POST" and 'log_out_btn' in request.POST:
+
+        return redirect('log_out_load')
+
+
+    return render(request,'customertemp/choosee.html')
+
+
+def view_stock1(request):
+    data = seed.objects.all()
+    data1 = plant.objects.all()
+    data2 = fertilizer.objects.all()
+    return render(request, 'customertemp/view_stock.html', {'data': data,'data1':data1,'data2':data2})

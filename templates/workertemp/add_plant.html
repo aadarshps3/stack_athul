@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends 'workertemp/worker_home.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="content-wrapper">
+      <div class="container-xxl flex-grow-1 container-p-y">
+              <div class="row">
+                <div class="col-xl">
+                  <div class="card mb-4">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                      <h5 class="mb-0">plant</h5>
+                    </div>
+                    <div class="card-body">
+                      <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{plant_form|crispy}}
+                        <br>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+
+                    </div>
+                  </div>
+                </div>
+
+{% endblock %}

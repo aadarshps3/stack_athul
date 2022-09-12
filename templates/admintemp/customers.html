@@ -14,7 +14,7 @@
                           <th>CONTACT NO.</th>
                           <th>Email</th>
                           <th>ADDRESS</th>
-                          <th>Remove</th>
+<!--                          <th>Remove</th>-->
                         </tr>
                       </thead>
                       <tbody>
@@ -25,13 +25,13 @@
                           <td>{{ i.contact_no }}</td>
                           <td>{{ i.email }}</td>
                           <td>{{ i.address }}</td>
-                          <td>
-                            <form action="{% url 'customers_remove' i.id %}" method="post">
-                                {% csrf_token %}
-                                <input type="hidden" name="customer" value="{{ i.id }}"/>
-                                <button type="submit" class="btn btn-info">Delete</button>
-                                </form>
-                          </td>
+<!--                          <td>-->
+<!--                            <form action="{% url 'customers_remove' i.id %}" method="post">-->
+<!--                                {% csrf_token %}-->
+<!--                                <input type="hidden" name="customer" value="{{ i.id }}"/>-->
+<!--                                <button type="submit" class="btn btn-info">Delete</button>-->
+<!--                                </form>-->
+<!--                          </td>-->
                         </tr>
                       {% endfor %}
                       </tbody>

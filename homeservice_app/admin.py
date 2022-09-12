@@ -4,8 +4,9 @@ from homeservice_app import models
 
 
 admin.site.register(models.Login)
-admin.site.register(models.Worker)
-admin.site.register(models.Customers)
+admin.site.register(models.Nursery)
+admin.site.register(models.Farmer)
 admin.site.register(models.Work)
-admin.site.register(models.Bill)
-admin.site.register(models.Schedule)
+admin.site.register(models.Chat)
+# admin.site.register(models.Bill)
+# admin.site.register(models.Schedule)

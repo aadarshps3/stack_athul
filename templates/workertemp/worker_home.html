@@ -25,7 +25,7 @@
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="navbar-brand-wrapper d-flex justify-content-center">
         <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
-          <a class="navbar-brand brand-logo" href="index.html"><img src="{% static 'assets/images/logo.svg' %}" alt="logo"/></a>
+          <a class="navbar-brand brand-logo" href="#"><img src="{% static 'assets/images/stack1.png' %}" alt="logo"/></a>
           <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{% static 'assets/images/logo-mini.svg' %}" alt="logo"/></a>
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
             <span class="mdi mdi-sort-variant"></span>
@@ -154,37 +154,42 @@
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <i class="mdi mdi-circle-outline menu-icon"></i>
-              <span class="menu-title">Schedules</span>
+              <span class="menu-title">Products</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'schedule_add' %}">Add</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'schedule_views' %}">View</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'stockpage' %}">Add</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'view_stock' %}">View</a></li>
               </ul>
             </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basi" aria-expanded="false" aria-controls="ui-basic">
-              <i class="mdi mdi-circle-outline menu-icon"></i>
-              <span class="menu-title">Payment</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-basi">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'view_bill_worker' %}">View</a></li>
-              </ul>
-            </div>
-          </li>
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basi" aria-expanded="false" aria-controls="ui-basic">-->
+<!--              <i class="mdi mdi-circle-outline menu-icon"></i>-->
+<!--              <span class="menu-title">Reply Enquiries</span>-->
+<!--              <i class="menu-arrow"></i>-->
+<!--            </a>-->
+<!--            <div class="collapse" id="ui-basi">-->
+<!--              <ul class="nav flex-column sub-menu">-->
+<!--                <li class="nav-item"> <a class="nav-link" href="{% url 'view_bill_worker' %}">Add</a></li>-->
+<!--              </ul>-->
+<!--            </div>-->
+<!--            <div class="collapse" id="ui-basi">-->
+<!--              <ul class="nav flex-column sub-menu">-->
+<!--                <li class="nav-item"> <a class="nav-link" href="{% url 'view_bill_worker' %}">View</a></li>-->
+<!--              </ul>-->
+<!--            </div>-->
+<!--          </li>-->
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-bas" aria-expanded="false" aria-controls="ui-basic">
               <i class="mdi mdi-circle-outline menu-icon"></i>
-              <span class="menu-title">Appointments</span>
+              <span class="menu-title">Weather Details</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-bas">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'appointment_view_worker' %}">View</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'weatherdetails2' %}">View</a></li>
               </ul>
             </div>
           </li>
@@ -221,8 +226,8 @@
         <!-- partial:partials/_footer.html -->
         <footer class="footer">
         <div class="d-sm-flex justify-content-center justify-content-sm-between">
-          <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © <a href="https://www.bootstrapdash.com/" target="_blank">bootstrapdash.com </a>2021</span>
-          <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Only the best <a href="https://www.bootstrapdash.com/" target="_blank"> Bootstrap dashboard  </a> templates</span>
+<!--          <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © <a href="https://www.bootstrapdash.com/" target="_blank">bootstrapdash.com </a>2021</span>-->
+<!--          <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Only the best <a href="https://www.bootstrapdash.com/" target="_blank"> Bootstrap dashboard  </a> templates</span>-->
         </div>
         </footer>
         <!-- partial -->

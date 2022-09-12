@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends 'workertemp/worker_home.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+<form method="post">
+    <h5>Update Stock</h5>
+     {% csrf_token %}
+        {{form|crispy}}<br>
+
+<!--    <button type="submit" value=" ">submit</button>-->
+    <div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+</form>
+
+
+{% endblock %}

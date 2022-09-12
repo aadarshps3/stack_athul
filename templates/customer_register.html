@@ -7,7 +7,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Customer Register Form</title>
+  <title>Farmer Register Form</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{% static 'assets/vendors/mdi/css/materialdesignicons.min.css' %}">
   <link rel="stylesheet" href="{% static 'assets/vendors/vendors/base/vendor.bundle.base.css' %}">
@@ -27,7 +27,7 @@
         <div class="row w-100 mx-0">
           <div class="col-lg-8 mx-auto">
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
-              <p><h3>Customer Register Form</h3></p>
+              <p><h3>Farmer Register Form</h3></p>
               <form class="pt-3" method="post"enctype="multipart/form-data">
                   {% csrf_token %}
                   <div class="form-group">
@@ -47,7 +47,7 @@
                   <button type="submit" class="btn btn-info">Signup</button>
                 </div>
                 <div class="text-center mt-4 font-weight-light">
-                  Already have an account? <a href="{% url 'login' %}" class="text-primary">Login</a>
+                  Already have an account? <a href="{% url 'login_view' %}" class="text-primary">Login</a>
                 </div>
               </form>
             </div>

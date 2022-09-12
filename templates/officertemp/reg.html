@@ -1,10 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'admintemp/admin_home.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<!--<div class="col-lg-12 grid-margin stretch-card">-->
+<div class="card" style="width: 80rem;">
+<p><h3>Officer Register Form</h3></p>
+<form class="pt-3" method="post"enctype="multipart/form-data">
+    {% csrf_token %}
+  {% load crispy_forms_tags %}
+    <div class="form-group">
+    {{user_form|crispy}}
+    {{officer_form|crispy}}
+
+     <div class="mt-3">
+                  <button type="submit" class="btn btn-info">Signup</button>
+                </div>
+    </div>
+</form>
+    </div>
+<!--            </div>-->
+{% endblock %}

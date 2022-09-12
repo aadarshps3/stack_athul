@@ -14,25 +14,21 @@
                           <th>CONTACT NO.</th>
                           <th>Email</th>
                           <th>ADDRESS</th>
-                          <th>WORK_TYPE</th>
-                          <th>update</th>
+<!--                          <th>WORK_TYPE</th>-->
+<!--                          <th>update</th>-->
                           <th>Remove</th>
                         </tr>
                       </thead>
                       <tbody>
                       {% for i in data %}
                         <tr>
-                          <td class="py-1">
-                            {% if i.id_card %}
-                            <img src="{{i.id_card.url}}" alt="image"/>
-                            {% endif %}
-                          </td>
-                          <td>{{ i.name }}</td>
-                          <td>{{ i.contact_no }}</td>
+                          <td>{{ i.user }}</td>
+                          <td>{{ i.nursery_name }}</td>
+                          <td>{{ i.phone_number }}</td>
                           <td>{{ i.email }}</td>
                           <td>{{ i.address }}</td>
-                          <td>{{ i.work_type }}</td>
-                          <td><a href="{% url 'workers_update' i.id %}" class="btn btn-primary">Update</a></td>
+<!--                          <td>{{ i.work_type }}</td>-->
+<!--                          <td><a href="{% url 'workers_update' i.id %}" class="btn btn-primary">Update</a></td>-->
                           <td>
                             <form action="{% url 'worker_remove' i.id %}" method="post">
                                 {% csrf_token %}
