@@ -1,7 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f3a7badd-760f-41f1-ad73-94c3c89eb040" name="Changes" comment="" />
+    <list default="true" id="f3a7badd-760f-41f1-ad73-94c3c89eb040" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/customertemp/announce_view.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/officertemp/announce_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/officertemp/announce_view.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/workertemp/announce_view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeservice_app/customerviews.py" beforeDir="false" afterPath="$PROJECT_DIR$/homeservice_app/customerviews.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeservice_app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/homeservice_app/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeservice_app/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeservice_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/homeservice_app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeservice_app/officerviews.py" beforeDir="false" afterPath="$PROJECT_DIR$/homeservice_app/officerviews.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeservice_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/homeservice_app/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeservice_app/workerviews.py" beforeDir="false" afterPath="$PROJECT_DIR$/homeservice_app/workerviews.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Photo/IMG_9253.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Photo/Screenshot_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Photo/WIN_20211231_17_37_36_Pro.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Photo/WIN_20211231_17_37_36_Pro_KxFTHVt.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Photo/WIN_20211231_17_37_36_Pro_uVzbCor.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Photo/cat1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Photo/coww.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Photo/elephant.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Photo/elephant_LQirPwa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Photo/elephant_kspH5zn.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Photo/sheep.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Photo/sheep_ZaT0ILL.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Photo/sheep_qqtWCpl.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Photo/sheep_yWrkAyd.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Photo/stack1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Photo/tiger.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Photo/tiger_3CcrbmV.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Photo/tiger_XU9hmx5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Photo/tiger_guQvYA8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Training_images/Mohanlal_Viswanathan_Nair_BNC.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Training_images/Mohanlal_Viswanathan_Nair_BNC_0niZvKF.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Training_images/data-science.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/fertilizer/IMG_9244.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/fertilizer/IMG_9278.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/id_cards/data-science.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/IMG_9255.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Screenshot_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/WIN_20211231_17_37_36_Pro.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/WIN_20211231_17_37_36_Pro_b0G5Pe3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/WIN_20211231_17_37_36_Pro_cRYs32g.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/cat1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/coww.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/coww_N2C6sBR.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/coww_ec3c8Oz.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/elephant.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/elephant_aufjL4N.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/fox.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/fox_CupSeWh.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/fox_ND3YPis.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/sheep.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/sheep_tW3BgM1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/stack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/stack_kY7YbUX.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/tiger.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/nursery/0c4f6f72-c7a2-42e1-9671-41ab3bf37fe7___RS_Early.B_6752.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/nursery/fox.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/nursery/tiger.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/oPhoto/00d8f10f-5038-4e0f-bb58-0b885ddc0cc5___RS_Early.B_8722.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/oPhoto/IMG_9244.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/oPhoto/Screenshot_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/oPhoto/coww.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/oPhoto/coww_yhqrRss.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/oPhoto/elephant.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/oPhoto/elephant_4aImk5y.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/oPhoto/elephant_I3STGgX.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/oPhoto/elephant_NBbh5VQ.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/oPhoto/fox.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/oimages/0a47f32c-1724-4c8d-bfe4-986cedd3587b___RS_Early.B_8001.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/oimages/IMG_9327.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/oimages/Screenshot_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/oimages/cat.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/oimages/cat1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/oimages/cat1_0SF81tD.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/oimages/coww.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/oimages/elephant.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/oimages/elephant_gzha00J.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/oimages/tiger.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/plant/IMG_9262.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/plant/IMG_9300.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/seed/IMG_9255.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/seed/IMG_9255_Plm8Mrq.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/seed/IMG_9288.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/soil/black.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/soil/black_DlzA2NS.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/soil/black_EZhBtm3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/soil/black_enkc07a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/soil/yellow.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/soil/yellow_KoPzFUU.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/0a47f32c-1724-4c8d-bfe4-986cedd3587b___RS_Early.B_8001.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/0a8a68ee-f587-4dea-beec-79d02e7d3fa4___RS_Early.B_8461.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/0a8a68ee-f587-4dea-beec-79d02e7d3fa4___RS_Early.B_8461_TWu4BNj.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/0a8a68ee-f587-4dea-beec-79d02e7d3fa4___RS_Early.B_8461_TqjWqaa.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/0c2628d4-8d64-48a9-a157-19a9c902e304___RS_LB_4590.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/online_home_service/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/online_home_service/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/online_home_service/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/online_home_service/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/customertemp/chat_view.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customertemp/chat_view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/customertemp/choosee.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customertemp/choosee.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/customertemp/customer_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customertemp/customer_home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/officertemp/officer_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/officertemp/officer_home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/workertemp/worker_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/workertemp/worker_home.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,16 +129,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ADARSH PS/Downloads/stackkkk/project&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/ADARSH PS/Downloads/HostelManagement/HostelManagement",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ADARSH PS\Downloads\stackkkk\project" />

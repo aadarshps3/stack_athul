@@ -51,6 +51,7 @@ urlpatterns = [
     path('remove_plant/<int:id>/', workerviews.remove_plant, name="remove_plant"),
     path('remove_fertilizer/<int:id>/', workerviews.remove_fertilizer, name="remove_fertilizer"),
     path('remove_seed/<int:id>/', workerviews.remove_seed, name="remove_seed"),
+    path('view_announcecustomets', workerviews.view_announcecustomets, name="view_announcecustomets"),
 
     path('customer_home', customerviews.customer_home, name='customer_home'),
     path('farmerviewprofile', customerviews.farmerviewprofile, name='farmerviewprofile'),
@@ -73,6 +74,7 @@ urlpatterns = [
     path("load_upload_page",customerviews.load_upload_page,name="load_upload_page"),
     path("load_upload_page1",customerviews.load_upload_page1,name="load_upload_page1"),
     path('view_stock1',customerviews.view_stock1, name="view_stock1"),
+    path('view_announcecustome',customerviews.view_announcecustome, name="view_announcecustome"),
 
 
     path('chat_add',customerviews.chat_add,name='chat_add'),
@@ -84,5 +86,7 @@ urlpatterns = [
     path('view_Nursery3', officerviews.view_Nursery3, name='view_Nursery3'),
     path('reply_Feedback/<int:id>/', officerviews.reply_Feedback, name='reply_Feedback'),
     path('weatherdetails/', officerviews.weatherdetails, name='weatherdetails'),
+    path('announce', officerviews.announce, name='announce'),
+    path('view_announce', officerviews.view_announce, name='view_announce'),
 
 ]

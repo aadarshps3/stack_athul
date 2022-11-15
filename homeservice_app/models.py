@@ -82,10 +82,9 @@ class Officer(models.Model):
 #     end_time = models.TimeField()
 #
 #
-# class Appointment(models.Model):
-#     user = models.ForeignKey(Farmer, on_delete=models.CASCADE, related_name='appointment')
-#     schedule = models.ForeignKey(Schedule, on_delete=models.CASCADE)
-#     status = models.IntegerField(default=0)
+class Announcement(models.Model):
+    user = models.ForeignKey(Officer, on_delete=models.CASCADE, related_name='announcement')
+    content = models.TextField(max_length=1000)
 #
 #
 class Feedback(models.Model):

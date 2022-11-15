@@ -9,7 +9,7 @@ from homeservice_app.prediction import model_predict
 from homeservice_app.prediction1 import model_predict1
 
 from homeservice_app.forms import FeedbackForm, ChatForm , upload_form,upload_form1,FarmerRegister
-from homeservice_app.models import Nursery, Farmer, Feedback, Chat , upload_img,Addproduct ,upload_imgg,seed,plant,fertilizer
+from homeservice_app.models import Nursery, Farmer, Feedback, Chat , upload_img,Addproduct ,upload_imgg,seed,plant,fertilizer,Announcement
 
 
 def customer_home(request):
@@ -258,3 +258,8 @@ def view_stock1(request):
     data1 = plant.objects.all()
     data2 = fertilizer.objects.all()
     return render(request, 'customertemp/view_stock.html', {'data': data,'data1':data1,'data2':data2})
+
+
+def view_announcecustome(request):
+    content=Announcement.objects.all()
+    return render(request,'customertemp/announce_view.html',{'content':content})

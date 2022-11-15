@@ -1,0 +1,33 @@
+{% extends 'customertemp/customer_home.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<!--<style>-->
+<!--  .ash{-->
+<!--  border:1px solid #adb5bd;-->
+<!--  padding:25px;-->
+<!--  border-radius: 0 15px 15px 15px;-->
+<!--  width:600px;-->
+<!--  }-->
+<!--  .head{-->
+<!--  padding:22px;-->
+<!--  }-->
+<!--</style>-->
+<div class="head" style="background-color:#ced4da; width:100%; text-align:center">
+    <h3>ANNOUNCEMETS</h3>
+      </div>
+<div class="card">
+  <div class="card-body">
+
+{% for i in content %}
+      <div class="ash mt-4">
+    <h5>{{i.user}}</h5>
+          <marquee>{{i.content}}</marquee>
+      <marquee direction = "up"></marquee>
+<!--    <p class="mt-3">{{i.content}}</p>-->
+          </div>
+{% endfor %}
+
+
+  </div>
+</div>
+{% endblock %}

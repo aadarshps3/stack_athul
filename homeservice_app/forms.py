@@ -5,7 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 from django.core.validators import RegexValidator
 
-from homeservice_app.models import Login, Nursery, Farmer, Work, Officer, Feedback, Chat, upload_img , Addproduct , upload_imgg , weather,seed,plant,fertilizer
+from homeservice_app.models import Login, Nursery, Farmer, Work, Officer, Feedback, Chat, upload_img , Addproduct , upload_imgg , weather,seed,plant,fertilizer,Announcement
 
 
 class DateInput(forms.DateInput):
@@ -140,3 +140,8 @@ class fertilizerform(forms.ModelForm):
     class Meta:
         model=fertilizer
         fields=('name','category','photo','rate','company_name','how_to_use')
+
+class Announcementform(forms.ModelForm):
+    class Meta:
+        model=Announcement
+        fields=['content']

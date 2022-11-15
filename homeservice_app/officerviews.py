@@ -5,8 +5,8 @@ import cv2
 import numpy as np
 import os
 
-# from homeservice_app.forms import PayBillForm
-from homeservice_app.models import Nursery, Farmer, Officer,Feedback,weather
+from homeservice_app.forms import Announcementform
+from homeservice_app.models import Nursery, Farmer, Officer,Feedback,weather,Announcement
 
 
 
@@ -44,3 +44,20 @@ def reply_Feedback(request, id):
 def weatherdetails(request):
     data = weather.objects.all()
     return render(request,'officertemp/weatherofficer.html',{'data':data})
+
+
+def announce(request):
+    form = Announcementform()
+    if request.method == 'POST':
+        form = Announcementform(request.POST)
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.user = Officer.objects.get(user=request.user)
+            obj.save()
+            messages.info(request, 'Announcement added Successfully')
+            return redirect('view_announce')
+    return render(request,'officertemp/announce_add.html',{'form':form})
+
+def view_announce(request):
+    content=Announcement.objects.all()
+    return render(request,'officertemp/announce_view.html',{'content':content})

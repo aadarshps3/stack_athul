@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
 from homeservice_app.forms import Stock,seedform,plantform,fertilizerform
-from homeservice_app.models import Farmer, Nursery , Addproduct,weather,seed,plant,fertilizer
+from homeservice_app.models import Farmer, Nursery , Addproduct,weather,seed,plant,fertilizer,Announcement
 
 
 
@@ -170,3 +170,7 @@ def fertilizerpage(request):
 def weatherdetails2(request):
     data = weather.objects.all()
     return render(request,'workertemp/weathernursery.html',{'data':data})
+
+def view_announcecustomets(request):
+    content=Announcement.objects.all()
+    return render(request,'workertemp/announce_view.html',{'content':content})
